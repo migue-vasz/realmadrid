@@ -1,0 +1,33 @@
+{% load static %}
+<html>
+    <head>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/club.css' %}">
+        <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+        <title>mvasz</title>
+    </head>
+    <body>
+      <div class="page-header">
+        {% if user.is_authenticated %}
+          <a href="{% url 'listar_borrador' %}" class="top-menu">
+            <span class="glyphicon glyphicon-edit"></span>
+          </a>
+          <a href="{% url 'nueva_partido' %}" class="top-menu">
+            <span class="glyphicon glyphicon-plus"></span>
+          </a>
+        {% endif %}
+        <h1>
+          <a href="/">Real Madrid CF</a>
+        </h1>
+      </div>
+      <div class="content container">
+        <div class="row">
+          <div class="col-md-8">
+            {% block content %}
+            {% endblock %}
+          </div>
+        </div>
+      </div>
+    </body>
+</html>

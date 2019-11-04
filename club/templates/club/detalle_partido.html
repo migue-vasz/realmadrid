@@ -1,0 +1,24 @@
+{% extends 'club/base.html' %}
+
+{% block content %}
+  <div class="post">
+    {% if p.fecha_partido %}
+      <div class="date">
+        <p>Fecha del encuentro: {{p.fecha_partido}}</p>
+      </div>
+    {% else %}
+        <a class="btn btn-default" href="{% url 'publicar_partido' pk=p.pk %}">Publicar</a>
+    {% endif %}
+    {% if user.is_authenticated %}
+    <a class="btn btn-default" href="{% url 'editar_partido' pk=p.pk %}">
+      <span class="glyphicon glyphicon-pencil"></span>
+    </a>
+    <a class="btn btn-default" href="{% url 'eliminar_partido' pk=p.pk %}">
+      <span class="glyphicon glyphicon-remove"></span>
+    </a>
+    {% endif %}
+    <h2>{{p.marcador}}</h2>
+    <p align="justify">Competicion: {{p.competicion|linebreaksbr}}</p>
+    <p align="justify">Instancia: {{p.instancia|linebreaksbr}}</p>
+  </div>
+{% endblock %}

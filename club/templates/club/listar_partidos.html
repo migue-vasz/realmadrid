@@ -1,0 +1,12 @@
+{% extends 'club/base.html' %}
+
+{% block content %}
+  {% for i in p %}
+    <div class="post">
+      <h2>
+        <a href="{% url 'detalle_partido' pk=i.pk %}">{{i.marcador}}</a>
+      </h2>
+      <p align="justify">Fecha del partido: {{i.fecha_partido|linebreaksbr}}</p>
+    </div>
+  {% endfor %}
+{% endblock %}
