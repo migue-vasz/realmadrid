@@ -1,0 +1,30 @@
+{% extends 'club/inicio.html' %}
+
+{% block content %}
+  <h1>Rotaciones realizados durante la temporada 2019/20</h1>
+  <div class="page-header">
+    {% if user.is_authenticated %}
+      <a href="{% url 'nueva_rotacion' %}" class="top-menu">
+        <span class="glyphicon glyphicon-plus"></span>
+      </a>
+    {% endif %}
+  </div>
+  <table>
+    <tr>
+      <th><strong>PARTIDO</strong>&nbsp;&nbsp;&nbsp;&nbsp;</th>
+      <th><strong>JUGADOR</strong>&nbsp;&nbsp;&nbsp;&nbsp;</th>
+      <th><strong>ALINEACION</strong>&nbsp;&nbsp;&nbsp;&nbsp;</th>
+      <th><strong>MINUTOS JUGADOS</strong>&nbsp;&nbsp;&nbsp;&nbsp;</th>
+    </tr>
+    {% for i in r %}
+      <div class="post">
+        <tr>
+          <td>{{i.partido}}&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          <td><a href="{% url 'detalle_rotacion' pk=i.pk %}">{{i.jugador}}&nbsp;&nbsp;&nbsp;&nbsp;</a></td>
+          <td>{{i.alineacion}}&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          <td>{{i.minutos_jugados}}</td>
+        </tr>
+      </div>
+    {% endfor %}
+  </table>
+{% endblock %}

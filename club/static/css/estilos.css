@@ -1,0 +1,121 @@
+*
+{
+	padding: 0;
+	margin: 0;
+}
+.MenuSocial
+{
+  position: absolute;
+  z-index: 2;
+  padding-top: 20px;
+  padding-left: 1250px;
+}
+.ImagenSocial
+{
+  border: 0;
+  width: 100%;
+}
+.Busqueda
+{
+  position: absolute;
+  z-index: 6;
+  padding-top: 20px;
+  padding-left: 20px;
+  border: none;
+}
+.BotonFuente
+{
+  background: #B71C1C;
+  height: 40px;
+  width: 80px;
+}
+#LetraBuscar
+{
+  font-family: Century;
+  font-size: 18px;
+}
+.MenuFija
+{
+	position: fixed;
+  z-index: 7;
+  bottom: 0;
+  width: 100%;
+  overflow: hidden;
+  background: white;
+  padding-top: 0px;
+	padding-bottom: -5;
+}
+nav
+{
+	text-align: center;
+}
+ul
+{
+	list-style-type: none;
+  display: inline-block;
+  margin: 0;
+}
+li
+{
+	float: left;
+}
+li a
+{
+	display: block;
+  color: #A93226;
+  text-align: center;
+  padding: 20px 25px;
+}
+li a:hover
+{
+	background-color: #B71C1C;
+  text-decoration: none;
+  color: white;
+}
+a.active
+{
+  border-bottom: 3px solid #B71C1C;
+}
+.FuenteMenu
+{
+  overflow: hidden;
+  font-family: Stencil;
+  font-size: 17px;
+  background: white;
+}
+.Logo
+{
+	border: 0;
+}
+.NombreEmpresa
+{
+	text-align: center;
+  font-family: Broadway;
+  font-size: 45px;
+  color: #B7950B;
+  z-index: 4;
+  padding-top: 20px;
+  padding-bottom: 15px;
+}
+.Informacion
+{
+  font-family: Arial;
+  font-size: 17px;
+}
+.TodoContenido
+{
+	font-size: 20px;
+  z-index: 3;
+  padding-right: 100px;
+  padding-left: 400px;
+  text-align: justify;
+}
+.Pie
+{
+	font-size: 15px;
+  padding-bottom: 90px;
+  text-align: center;
+  font-family: Segoe Print;
+  padding-top: 50px;
+  z-index: 6;
+}

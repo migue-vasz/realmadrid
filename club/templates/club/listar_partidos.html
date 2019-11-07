@@ -1,12 +1,30 @@
-{% extends 'club/base.html' %}
+{% extends 'club/inicio.html' %}
 
 {% block content %}
-  {% for i in p %}
-    <div class="post">
-      <h2>
-        <a href="{% url 'detalle_partido' pk=i.pk %}">{{i.marcador}}</a>
-      </h2>
-      <p align="justify">Fecha del partido: {{i.fecha_partido|linebreaksbr}}</p>
-    </div>
-  {% endfor %}
+  <h1>Todos los partidos de la temporada 2019/20</h1>
+  <div class="page-header">
+    {% if user.is_authenticated %}
+      <a href="{% url 'nuevo_partido' %}" class="top-menu">
+        <span class="glyphicon glyphicon-plus"></span>
+      </a>
+    {% endif %}
+  </div>
+  <table>
+    <tr>
+      <th><strong>COMPETICION</strong>&nbsp;&nbsp;&nbsp;&nbsp;</th>
+      <th><strong>INSTANCIA</strong>&nbsp;&nbsp;&nbsp;&nbsp;</th>
+      <th><strong>FECHA</strong>&nbsp;&nbsp;&nbsp;&nbsp;</th>
+      <th><strong>MARCADOR</strong>&nbsp;&nbsp;&nbsp;&nbsp;</th>
+    </tr>
+    {% for i in p %}
+      <div class="post">
+        <tr>
+          <td>{{i.competicion}}&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          <td>{{i.instancia}}&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          <td>{{i.fecha_partido|date:'d-m-Y'}}&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          <td><a href="{% url 'detalle_partido' pk=i.pk %}">{{i.marcador}}&nbsp;&nbsp;&nbsp;&nbsp;</a></td>
+        </tr>
+      </div>
+    {% endfor %}
+  </table>
 {% endblock %}

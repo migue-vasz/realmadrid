@@ -1,7 +1,7 @@
 {% extends 'club/inicio.html' %}
 
 {% block content %}
-  <h1>Editar Partido</h1>
+  <h1>Editar Rotacion</h1>
   <form method="POST" class="post-form">{% csrf_token %}
       {{ formulario.as_p }}
       <button type="submit" class="save btn btn-default">Guardar</button>

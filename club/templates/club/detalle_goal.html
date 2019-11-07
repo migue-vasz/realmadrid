@@ -1,0 +1,18 @@
+{% extends 'club/inicio.html' %}
+
+{% block content %}
+  <div class="post">
+    {% if user.is_authenticated %}
+    <a class="btn btn-default" href="{% url 'editar_goal' pk=g.pk %}">
+      <span class="glyphicon glyphicon-pencil"></span>
+    </a>
+    <a class="btn btn-default" href="{% url 'eliminar_goal' pk=g.pk %}">
+      <span class="glyphicon glyphicon-remove"></span>
+    </a>
+    {% endif %}
+    <br><br>
+    <h1><p>Jugador: {{g.anotador}}</p>
+    <p>Partido: {{g.partido}}</p>
+    <p>Descripcion: {{g.descripcion}}</p></h1>
+  </div>
+{% endblock %}
